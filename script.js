@@ -29,22 +29,23 @@ async function checkweather(city){
         wind_speed.innerHTML =`${weather_data.wind.speed}km/h`;
 
         switch(weather_data.weather[0].main){
-            case 'Clouds':
-                weather_img.src = "/media/cloud.png";
-                break;
-            case 'Clear':
-                weather_img.src ="/media/clear.png";
-                break;
-            case 'Rain':
-                weather_img.src = "/media/rain.png";
-                break;
-            case 'Mist':
-                weather_img.src = "/media/mist.png";
-                break;
-            case 'Snow':
-                weather_img.src = "/media/snow.png";
-                break;
-        }
+    case 'Clouds':
+        weather_img.src = "media/cloud.png";
+        break;
+    case 'Clear':
+        weather_img.src = "media/clear.png";
+        break;
+    case 'Rain':
+        weather_img.src = "media/rain.png";
+        break;
+    case 'Mist':
+        weather_img.src = "media/mist.png";
+        break;
+    case 'Snow':
+        weather_img.src = "media/snow.png";
+        break;
+    }
+
 
 }
 searchBtn.addEventListener('click',()=>{
