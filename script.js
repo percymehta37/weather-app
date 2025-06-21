@@ -8,6 +8,26 @@ const wind_speed=document.getElementById('wind-speed');
 const location_not_found = document.querySelector('.location-not-found');
 const weather_body = document.querySelector('.weather-body');
 
+searchBtn.addEventListener('click', () => {
+    const city = inputBox.value.trim();
+    if (city === "") {
+        alert("Please enter a location");
+        return;
+    }
+    checkweather(city);
+});
+
+inputBox.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        const city = inputBox.value.trim();
+        if (city === "") {
+            alert("Please enter a location");
+            return;
+        }
+        checkweather(city);
+    }
+});
+
 async function checkweather(city){
     const api= "559b9411e9de7784dac167a553ed3517"
     const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}`
@@ -48,11 +68,4 @@ async function checkweather(city){
 
 
 }
-searchBtn.addEventListener('click',()=>{
-    checkweather(inputBox.value);
-})
-inputBox.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        checkweather(inputBox.value);
-    }
-});
+
